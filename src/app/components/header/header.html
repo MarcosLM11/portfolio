@@ -1,0 +1,16 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50 flex justify-center"
+  style="padding-top: 1.25rem; pointer-events: none"
+>
+  <nav class="pill-nav" style="pointer-events: auto">
+    @for (link of navLinks; track link.id) {
+      <button
+        (click)="scrollTo(link.id)"
+        class="pill-item"
+        [class.active]="activeSection() === link.id"
+      >
+        {{ link.label }}
+      </button>
+    }
+  </nav>
+</header>

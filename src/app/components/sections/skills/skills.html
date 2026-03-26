@@ -1,0 +1,59 @@
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-line"></span>
+      <span class="section-eyebrow-label">02 — Skills</span>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+      <!-- Heading -->
+      <div class="lg:w-80 flex-shrink-0">
+        <h2 class="section-title mb-4">The tools<br />I reach for.</h2>
+        <p style="font-size: 0.875rem; line-height: 1.75; color: rgba(28, 24, 48, 0.5)">
+          A curated set of technologies I use to build reliable, performant products. Always
+          learning, always refining.
+        </p>
+        <div
+          style="
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 7rem;
+            line-height: 1;
+            color: rgba(28, 24, 48, 0.05);
+            letter-spacing: -0.05em;
+            user-select: none;
+            margin-top: 1.5rem;
+          "
+          aria-hidden="true"
+        >
+          02
+        </div>
+      </div>
+
+      <!-- Categories grid -->
+      <div class="flex-1 flex flex-col gap-8">
+        @for (cat of categories; track cat.label) {
+          <div>
+            <p
+              style="
+                font-family: 'Space Mono', monospace;
+                font-size: 0.62rem;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: rgba(28, 24, 48, 0.32);
+                margin-bottom: 0.875rem;
+              "
+            >
+              {{ cat.label }}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              @for (skill of cat.skills; track skill) {
+                <span class="skill-tag">{{ skill }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,142 @@
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-line"></span>
+      <span class="section-eyebrow-label">04 — Contact</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- Left: heading + links -->
+      <div>
+        <h2 class="section-title mb-4">Let's work<br />together.</h2>
+        <p
+          style="
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: rgba(28, 24, 48, 0.48);
+            margin-bottom: 2.5rem;
+            max-width: 30rem;
+          "
+        >
+          I'm always open to new projects, collaborations, or just a conversation about interesting
+          problems. Don't hesitate to reach out.
+        </p>
+
+        <div>
+          @for (link of contactLinks; track link.label) {
+            <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-link-label">{{ link.label }}</span>
+              <span class="contact-link-value">{{ link.value }}</span>
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="flex-shrink: 0; opacity: 0.3"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          }
+        </div>
+
+        <div
+          style="
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 8rem;
+            line-height: 1;
+            color: rgba(28, 24, 48, 0.04);
+            letter-spacing: -0.05em;
+            user-select: none;
+            margin-top: 2rem;
+          "
+          aria-hidden="true"
+        >
+          04
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div>
+        @if (!submitted()) {
+          <form (ngSubmit)="onSubmit()" style="display: flex; flex-direction: column; gap: 2rem">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input
+                id="name"
+                class="form-input"
+                type="text"
+                name="name"
+                [(ngModel)]="form.name"
+                placeholder="Jane Smith"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input
+                id="email"
+                class="form-input"
+                type="email"
+                name="email"
+                [(ngModel)]="form.email"
+                placeholder="jane@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea
+                id="message"
+                class="form-textarea"
+                name="message"
+                [(ngModel)]="form.message"
+                placeholder="Tell me about your project..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn-primary">
+                Send Message
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        } @else {
+          <div
+            style="display: flex; flex-direction: column; justify-content: center; padding: 3rem 0"
+          >
+            <div
+              style="
+                font-family: 'Syne', sans-serif;
+                font-weight: 800;
+                font-size: 2.5rem;
+                color: #1c1830;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+              "
+            >
+              Message sent. <span style="color: #6b5ce7">Thanks!</span>
+            </div>
+            <p style="font-size: 0.875rem; color: rgba(28, 24, 48, 0.48); line-height: 1.75">
+              I'll get back to you as soon as possible.
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
