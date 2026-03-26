@@ -68,4 +68,21 @@ Tipos: `CREADO` · `MODIFICADO` · `ELIMINADO` · `DECISIÓN` · `SPEC`
 
 ---
 
+---
+
+## [2026-03-26] — Limpieza del esqueleto Angular y docs
+
+| Tipo         | Ruta / Nombre         | Descripción                                                                            |
+| ------------ | --------------------- | -------------------------------------------------------------------------------------- |
+| `MODIFICADO` | `src/app/app.ts`      | Eliminado `signal` y propiedad `title`. Componente raíz vacío con solo `RouterOutlet`. |
+| `MODIFICADO` | `src/app/app.html`    | Reemplazado el HTML de bienvenida de Angular por `<router-outlet />`.                  |
+| `MODIFICADO` | `src/app/app.spec.ts` | Eliminado test "should render title" que dependía del contenido del placeholder.       |
+| `ELIMINADO`  | `docs/PLAN-01.md`     | Plan de implementación descartado por el usuario.                                      |
+| `ELIMINADO`  | `docs/TODO-LIST.md`   | Lista de tareas descartada por el usuario.                                             |
+| `ELIMINADO`  | `.DS_Store`           | Fichero de sistema macOS eliminado.                                                    |
+| `ELIMINADO`  | `dist/`               | Directorio de build eliminado (regenerable con `ng build`).                            |
+| `ELIMINADO`  | `.angular/cache/`     | Caché de builds eliminada (regenerable automáticamente).                               |
+
+---
+
 _Documento interno — no subir a git._
