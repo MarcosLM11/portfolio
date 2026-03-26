@@ -11,13 +11,14 @@ import { isPlatformBrowser } from '@angular/common';
 export class HeaderComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
 
-  activeSection = signal<string>('hero');
+  activeSection = signal<string>('home');
   isDark = signal<boolean>(false);
+  menuOpen = signal<boolean>(false);
 
   private observer?: IntersectionObserver;
 
   readonly navLinks = [
-    { label: 'Home', id: 'hero' },
+    { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
     { label: 'Projects', id: 'projects' },
     { label: 'Skills', id: 'skills' },
@@ -49,10 +50,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   scrollTo(id: string): void {
     if (!isPlatformBrowser(this.platformId)) return;
+    this.menuOpen.set(false);
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   toggleTheme(): void {
     this.isDark.update((v) => !v);
+  }
+
+  toggleMenu(): void {
+    this.menuOpen.update((v) => !v);
   }
 }

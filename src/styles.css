@@ -121,46 +121,6 @@ body {
   transform: translateY(0);
 }
 
-/* ===== FLOATING PILL NAV ===== */
-
-.pill-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.125rem;
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 9999px;
-  padding: 0.3125rem;
-  box-shadow:
-    0 8px 32px rgba(60, 45, 120, 0.14),
-    0 2px 8px rgba(60, 45, 120, 0.08);
-}
-
-.pill-item {
-  position: relative;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-family: 'Syne', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(28, 24, 48, 0.45);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
-  white-space: nowrap;
-  line-height: 1;
-}
-.pill-item:hover {
-  color: rgba(28, 24, 48, 0.75);
-}
-.pill-item.active {
-  background: rgba(190, 183, 230, 0.38);
-  color: #1c1830;
-  font-weight: 700;
-}
-
 /* ===== BUTTONS ===== */
 
 .btn-primary {
