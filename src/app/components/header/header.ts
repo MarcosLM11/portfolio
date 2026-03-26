@@ -6,11 +6,13 @@ import { isPlatformBrowser } from '@angular/common';
   standalone: true,
   imports: [],
   templateUrl: './header.html',
+  styleUrl: './header.css',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
 
   activeSection = signal<string>('hero');
+  isDark = signal<boolean>(false);
 
   private observer?: IntersectionObserver;
 
@@ -48,5 +50,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   scrollTo(id: string): void {
     if (!isPlatformBrowser(this.platformId)) return;
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  toggleTheme(): void {
+    this.isDark.update((v) => !v);
   }
 }
