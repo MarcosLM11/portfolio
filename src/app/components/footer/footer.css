@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.footer {
+  border-top: 1px solid rgba(28, 24, 48, 0.1);
+  background: rgba(255, 255, 255, 0.25);
+  padding: 1.25rem 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+/* Left */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-initials {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #1c1830;
+}
+
+.footer-dot {
+  color: rgba(28, 24, 48, 0.35);
+  font-size: 0.75rem;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(28, 24, 48, 0.55);
+}
+
+/* Center */
+.footer-center {
+  font-size: 0.8rem;
+  color: rgba(28, 24, 48, 0.55);
+}
+
+.footer-heart {
+  color: #e53e3e;
+}
+
+/* Right */
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-icon {
+  color: rgba(28, 24, 48, 0.4);
+  display: flex;
+  transition: color 0.2s;
+}
+
+.footer-icon:hover {
+  color: #1c1830;
+}
