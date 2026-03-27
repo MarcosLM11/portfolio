@@ -1,0 +1,127 @@
+:host {
+  display: block;
+}
+
+.explore-section {
+  padding: 6rem 1.5rem;
+}
+
+.explore-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title */
+.explore-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #1c1830;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.explore-highlight {
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.explore-subtitle {
+  font-size: 1rem;
+  color: rgba(28, 24, 48, 0.5);
+  margin-bottom: 3.5rem;
+}
+
+/* Grid */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+}
+
+/* Card */
+.explore-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(28, 24, 48, 0.09);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
+  border-color: var(--card-color);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Icon */
+.explore-icon-wrap {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.25rem;
+  border: 2px solid var(--card-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c1830;
+  transition:
+    background-color 0.35s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.explore-card:hover .explore-icon-wrap {
+  background: color-mix(in srgb, var(--card-color) 10%, transparent);
+  transform: scale(1.08);
+}
+
+/* Card text */
+.explore-card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--card-color);
+  margin: 0;
+}
+
+.explore-card-desc {
+  font-size: 0.9rem;
+  color: rgba(28, 24, 48, 0.5);
+  line-height: 1.6;
+  max-width: 18rem;
+  margin: 0;
+}
+
+.explore-card-cta {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--card-color);
+  margin-top: auto;
+  transition: letter-spacing 0.2s ease;
+}
+
+.explore-card:hover .explore-card-cta {
+  letter-spacing: 0.03em;
+}
