@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, PLATFORM_ID, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { BookCallService } from '../../services/book-call.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
+  readonly bookCallService = inject(BookCallService);
 
   activeSection = signal<string>('home');
   isDark = signal<boolean>(false);

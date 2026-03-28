@@ -1,0 +1,250 @@
+/* ===== WRAPPER ===== */
+.bc-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 1rem 2.5rem;
+}
+
+.bc-wrapper.open {
+  pointer-events: auto;
+}
+
+/* ===== BACKDROP ===== */
+.bc-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 14, 38, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.bc-wrapper.open .bc-backdrop {
+  opacity: 1;
+}
+
+/* ===== CARD ===== */
+.bc-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(248, 246, 255, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow:
+    0 24px 64px rgba(60, 45, 120, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(calc(100% + 2.5rem));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bc-wrapper.open .bc-card {
+  transform: translateY(0);
+}
+
+/* ===== CLOSE — plain X ===== */
+.bc-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  color: rgba(28, 24, 48, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.bc-close:hover {
+  color: #1c1830;
+}
+
+/* ===== HEADER ===== */
+.bc-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6b5ce7;
+  margin: 0 0 0.3rem;
+}
+
+.bc-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #1c1830;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* ===== ACTION ROWS ===== */
+.bc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 0.875rem;
+}
+
+.bc-action-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 1.125rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(28, 24, 48, 0.08);
+  background: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bc-action-row:hover {
+  border-color: rgba(107, 92, 231, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 16px rgba(107, 92, 231, 0.1);
+}
+
+.bc-action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.625rem;
+  background: rgba(107, 92, 231, 0.1);
+  color: #6b5ce7;
+  flex-shrink: 0;
+}
+
+.bc-action-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.bc-action-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #1c1830;
+}
+
+.bc-action-hint {
+  font-size: 0.75rem;
+  color: rgba(28, 24, 48, 0.45);
+}
+
+.bc-action-arrow {
+  color: rgba(28, 24, 48, 0.2);
+  flex-shrink: 0;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bc-action-row:hover .bc-action-arrow {
+  color: #6b5ce7;
+  transform: translateX(3px);
+}
+
+/* ===== COPY EMAIL ROW ===== */
+.bc-email-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.625rem 1.125rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(28, 24, 48, 0.08);
+  background: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1.25rem;
+}
+
+.bc-email-address {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(28, 24, 48, 0.55);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bc-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(107, 92, 231, 0.2);
+  background: rgba(107, 92, 231, 0.07);
+  color: #6b5ce7;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bc-copy-btn:hover {
+  background: rgba(107, 92, 231, 0.14);
+  border-color: rgba(107, 92, 231, 0.4);
+}
+
+/* ===== SOCIAL LINKS ===== */
+.bc-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bc-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  justify-content: center;
+  padding: 0.625rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(28, 24, 48, 0.09);
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(28, 24, 48, 0.5);
+  text-decoration: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.bc-social-btn:hover {
+  border-color: rgba(107, 92, 231, 0.3);
+  color: #6b5ce7;
+  background: rgba(107, 92, 231, 0.06);
+}

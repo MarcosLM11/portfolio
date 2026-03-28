@@ -3,10 +3,11 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
+import { BookCallComponent } from './components/book-call/book-call';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, BookCallComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
