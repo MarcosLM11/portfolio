@@ -52,7 +52,7 @@
 
 /* Card */
 .explore-card {
-  background: rgba(255, 255, 255, 0.55);
+  background: transparent;
   border: 1px solid rgba(28, 24, 48, 0.09);
   border-radius: 1.5rem;
   padding: 2.5rem 2rem;
@@ -73,7 +73,6 @@
   transform: translateY(-8px);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
   border-color: var(--card-color);
-  background: rgba(255, 255, 255, 0.85);
 }
 
 /* Icon */
