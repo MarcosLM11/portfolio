@@ -1,0 +1,449 @@
+:host {
+  display: block;
+}
+
+/* ── Section ── */
+.about-section {
+  padding: 4rem 0 6rem;
+}
+
+.about-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Card base ── */
+.about-card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+/* ── Row 1: 2 columns ── */
+.about-row1 {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 1rem;
+}
+
+/* ── Name card ── */
+.about-name-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.about-name-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #1c1830;
+  margin: 0;
+}
+
+.about-role-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(28, 24, 48, 0.45);
+  margin: 0;
+}
+
+/* ── Info hover card ── */
+.about-info-card {
+  position: relative;
+  padding: 2rem 2rem 0;
+}
+
+.about-hover-pill {
+  display: block;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(28, 24, 48, 0.35);
+  border: 1px solid rgba(28, 24, 48, 0.12);
+  border-radius: 9999px;
+  padding: 0.35rem 1rem;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.about-info-card:hover .about-hover-pill {
+  opacity: 0;
+}
+
+.about-info-panels {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  max-height: 90px;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-info-card:hover .about-info-panels {
+  max-height: 260px;
+}
+
+.about-info-panel {
+  padding: 0 1.25rem 1.75rem;
+}
+
+.about-info-divider {
+  width: 1px;
+  background: rgba(28, 24, 48, 0.08);
+  align-self: stretch;
+}
+
+.about-panel-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(28, 24, 48, 0.45);
+  margin: 0 0 0.75rem;
+  font-weight: 400;
+}
+
+.about-panel-text {
+  font-size: 0.82rem;
+  color: rgba(28, 24, 48, 0.6);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.about-info-mask {
+  position: sticky;
+  bottom: 0;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.55));
+  margin: 0 -2rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.about-info-card:hover .about-info-mask {
+  opacity: 0;
+}
+
+/* ── Row 2: 3 columns ── */
+.about-row2 {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Shared card title ── */
+.about-card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #1c1830;
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.about-title-bar {
+  width: 2rem;
+  height: 3px;
+  background: #6b5ce7;
+  border-radius: 2px;
+  margin-bottom: 1.1rem;
+}
+
+.about-body-text {
+  font-size: 0.88rem;
+  color: rgba(28, 24, 48, 0.65);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.about-body-text strong {
+  color: #1c1830;
+  font-weight: 700;
+}
+
+/* ── Mindset card ── */
+.about-mindset-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stacked hobby photos */
+.about-hobby-photos {
+  position: relative;
+  height: 160px;
+  margin: 0.5rem 0 1.25rem;
+  flex-shrink: 0;
+}
+
+.about-photo-back,
+.about-photo-front {
+  position: absolute;
+  border-radius: 0.75rem;
+  background: rgba(107, 92, 231, 0.08);
+  border: 1px solid rgba(107, 92, 231, 0.15);
+  overflow: hidden;
+}
+
+.about-photo-back {
+  width: 62%;
+  height: 130px;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-3deg);
+  /* background-image: url('your-hobby-photo-1.jpg'); background-size: cover; */
+}
+
+.about-photo-front {
+  width: 66%;
+  height: 138px;
+  bottom: 4px;
+  right: 0;
+  transform: rotate(1.5deg);
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  background: rgba(28, 24, 48, 0.07);
+  /* background-image: url('your-hobby-photo-2.jpg'); background-size: cover; */
+}
+
+.about-hobby-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(28, 24, 48, 0.6);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ── Photo + Location card ── */
+.about-photo-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-portrait {
+  flex: 1;
+  position: relative;
+  min-height: 220px;
+  background: rgba(107, 92, 231, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.about-portrait-placeholder {
+  color: rgba(107, 92, 231, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: rgba(28, 24, 48, 0.25);
+  text-transform: uppercase;
+}
+
+.about-location {
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.about-map-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(107, 92, 231, 0.04) 0px,
+      rgba(107, 92, 231, 0.04) 1px,
+      transparent 1px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(107, 92, 231, 0.04) 0px,
+      rgba(107, 92, 231, 0.04) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+  background-color: rgba(219, 214, 239, 0.3);
+}
+
+/* Vertical line accent */
+.about-map-bg::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #6b5ce7;
+  opacity: 0.4;
+}
+
+.about-location-info {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.25rem;
+}
+
+.about-location-city {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  color: #1c1830;
+  margin: 0 0 0.2rem;
+}
+
+.about-location-coords,
+.about-location-tz {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: rgba(28, 24, 48, 0.45);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.about-location-tz {
+  color: #6b5ce7;
+  margin-top: 0.15rem;
+}
+
+/* ── Craft card ── */
+.about-craft-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-craft-lead {
+  font-size: 1rem;
+  color: #1c1830;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+  font-weight: 400;
+}
+
+.about-craft-lead strong {
+  font-weight: 700;
+}
+
+/* Tech tags row */
+.about-tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.about-tech-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(107, 92, 231, 0.2);
+  border-radius: 4px;
+  color: rgba(107, 92, 231, 0.8);
+  background: rgba(107, 92, 231, 0.05);
+}
+
+/* Availability badge */
+.about-availability {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.about-avail-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.08);
+  }
+}
+
+.about-avail-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(28, 24, 48, 0.5);
+}
+
+/* ── Hover micro-interactions ── */
+.about-card {
+  transition: box-shadow 0.3s ease;
+}
+.about-card:hover {
+  box-shadow: 0 8px 32px rgba(107, 92, 231, 0.08);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-row1 {
+    grid-template-columns: 1fr;
+  }
+  .about-row2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-craft-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-row2 {
+    grid-template-columns: 1fr;
+  }
+  .about-craft-card {
+    grid-column: auto;
+  }
+}

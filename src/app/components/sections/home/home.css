@@ -21,18 +21,15 @@
 
 /* Avatar */
 .home-avatar {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7c3aed, #ec4899);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: white;
-  letter-spacing: 0.05em;
+}
+
+.home-avatar img {
+  width: 18rem;
+  height: 18rem;
+  object-fit: contain;
 }
 
 /* Title */
@@ -66,6 +63,18 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.chat-card:hover {
+  box-shadow:
+    0 24px 72px rgba(107, 92, 231, 0.18),
+    0 6px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(107, 92, 231, 0.35);
+  transform: translateY(-2px);
 }
 
 /* Messages */
