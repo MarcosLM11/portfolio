@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface ExploreCard {
   title: string;
   description: string;
   href: string;
+  route?: string;
   color: string;
   icon: 'book' | 'trophy' | 'link';
 }
@@ -11,6 +13,7 @@ interface ExploreCard {
 @Component({
   selector: 'app-contact',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
@@ -33,7 +36,8 @@ export class ContactComponent {
     {
       title: 'My Links',
       description: 'Find me across the web and social platforms',
-      href: '#',
+      href: '/links',
+      route: '/links',
       color: '#3b82f6',
       icon: 'link',
     },

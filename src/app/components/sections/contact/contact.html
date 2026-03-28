@@ -5,7 +5,13 @@
 
     <div class="explore-grid">
       @for (card of cards; track card.title) {
-        <a [href]="card.href" class="explore-card" [style.--card-color]="card.color">
+        <a
+          [routerLink]="card.route ?? null"
+          [attr.href]="card.route ? null : card.href"
+          [attr.target]="card.route ? null : '_self'"
+          class="explore-card"
+          [style.--card-color]="card.color"
+        >
           <div class="explore-icon-wrap">
             @switch (card.icon) {
               @case ('book') {
