@@ -13,9 +13,9 @@ export class BookCallComponent {
   private platformId = inject(PLATFORM_ID);
   readonly svc = inject(BookCallService);
 
-  readonly email = 'tu@email.com';
-  readonly githubUrl = 'https://github.com/tu-usuario';
-  readonly linkedinUrl = 'https://linkedin.com/in/tu-usuario';
+  readonly email = 'marcoslopezmarinn@gmail.com';
+  readonly githubUrl = 'https://github.com/MarcosLM11';
+  readonly linkedinUrl = 'https://www.linkedin.com/in/marcos-lopez-marin-356734345/';
 
   emailCopied = signal(false);
 

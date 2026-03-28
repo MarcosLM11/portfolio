@@ -12,17 +12,17 @@ export class LinksPageComponent {
   readonly links = [
     {
       name: 'GitHub',
-      href: 'https://github.com/tu-usuario',
+      href: 'https://github.com/MarcosLM11',
       icon: 'github',
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/tu-usuario',
+      href: 'https://www.linkedin.com/in/marcos-lopez-marin-356734345/',
       icon: 'linkedin',
     },
     {
       name: 'Email',
-      href: 'mailto:tu@email.com',
+      href: 'mailto:marcoslopezmarinn@gmail.com',
       icon: 'email',
     },
     {
