@@ -12,17 +12,12 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+app.post('/api/chat', express.json(), (req, res) => {
+  // TODO: Connect your AI provider here.
+  // Request body: { messages: Array<{ role: 'user' | 'assistant', content: string }> }
+  // Expected response: { message: string }
+  res.json({ message: 'AI provider not configured yet. Add your provider logic here.' });
+});
 
 /**
  * Serve static files from /browser
