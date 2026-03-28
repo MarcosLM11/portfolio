@@ -1,0 +1,102 @@
+:host {
+  display: block;
+}
+
+.skills-eyebrow {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1c1830;
+  text-align: center;
+  margin: 0 0 0.6rem;
+}
+
+.skills-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #1c1830;
+  text-align: center;
+  margin: 0;
+}
+
+.skills-accent {
+  color: #7c3aed;
+}
+
+/* Globe container */
+.globe-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  height: 560px;
+  margin: 3rem auto 0;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.globe-wrap.dragging {
+  cursor: grabbing;
+}
+
+/* Canvas for grid lines */
+.globe-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Floating icon — no background, no pill */
+.skill-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+.skill-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Label: hidden until JS sets it visible when in front zone */
+.skill-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(28, 24, 48, 0.7);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    max-width 0.4s ease;
+}
+
+@media (max-width: 640px) {
+  .globe-wrap {
+    height: 420px;
+  }
+
+  .skill-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}

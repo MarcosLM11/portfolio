@@ -4,8 +4,8 @@
 
 .footer {
   border-top: 1px solid rgba(28, 24, 48, 0.1);
-  background: rgba(255, 255, 255, 0.25);
-  padding: 2rem 2.5rem;
+  background: #cac5dc;
+  padding: 2.75rem 2.5rem;
 }
 
 .footer-inner {

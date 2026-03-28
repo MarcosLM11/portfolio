@@ -1,0 +1,19 @@
+<section id="skills">
+  <div class="section-inner">
+    <p class="skills-eyebrow">Tech Stack</p>
+    <h2 class="skills-title">My <span class="skills-accent">Skills</span></h2>
+
+    <div class="globe-wrap" #globe>
+      <canvas #canvas class="globe-canvas"></canvas>
+
+      @for (skill of skills; track skill.name) {
+        <div class="skill-badge" [attr.data-skill]="skill.name">
+          <svg class="skill-icon" viewBox="0 0 24 24" [attr.fill]="skill.fill" aria-hidden="true">
+            <path [attr.d]="skill.path" />
+          </svg>
+          <span class="skill-label">{{ skill.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
