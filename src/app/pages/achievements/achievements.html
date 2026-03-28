@@ -1,0 +1,131 @@
+<div class="ach-page">
+  <!-- Back to home -->
+  <a routerLink="/" class="ach-back">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M19 12H5" />
+      <path d="m12 5-7 7 7 7" />
+    </svg>
+    Back to home
+  </a>
+
+  <!-- Header -->
+  <div class="ach-header">
+    <p class="ach-eyebrow">Milestones &amp; Victories</p>
+    <h1 class="ach-title">My <span class="ach-accent">Achievements</span></h1>
+    <p class="ach-subtitle">From code to peaks, every achievement tells a story of dedication.</p>
+  </div>
+
+  <!-- Content -->
+  @if (achievements.length === 0) {
+    <div class="ach-empty-wrap">
+      <div class="ach-empty-icon" aria-hidden="true">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+          <path d="M4 22h16" />
+          <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+          <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+        </svg>
+      </div>
+      <p class="ach-empty-text">No achievements yet. Stay tuned!</p>
+    </div>
+  } @else {
+    <!-- Featured card (first achievement) -->
+    <div class="ach-featured">
+      @if (achievements[0].image) {
+        <div class="ach-featured-img">
+          <img [src]="achievements[0].image" [alt]="achievements[0].title" />
+        </div>
+      } @else {
+        <div class="ach-featured-img ach-img-placeholder">
+          <svg
+            width="56"
+            height="56"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+            <path d="M4 22h16" />
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+          </svg>
+        </div>
+      }
+      <div class="ach-featured-body">
+        <span class="ach-tag">{{ achievements[0].category }}</span>
+        <h2 class="ach-featured-title">{{ achievements[0].title }}</h2>
+        <p class="ach-featured-desc">{{ achievements[0].description }}</p>
+        <span class="ach-date">{{ achievements[0].date }}</span>
+      </div>
+    </div>
+
+    <!-- Grid (remaining achievements) -->
+    @if (achievements.length > 1) {
+      <div class="ach-grid">
+        @for (item of achievements.slice(1); track item.title) {
+          <div class="ach-card">
+            @if (item.image) {
+              <div class="ach-card-img">
+                <img [src]="item.image" [alt]="item.title" />
+              </div>
+            } @else {
+              <div class="ach-card-img ach-img-placeholder">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                  <path d="M4 22h16" />
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+                </svg>
+              </div>
+            }
+            <div class="ach-card-body">
+              <span class="ach-tag">{{ item.category }}</span>
+              <h3 class="ach-card-title">{{ item.title }}</h3>
+              <p class="ach-card-desc">{{ item.description }}</p>
+              <span class="ach-date">{{ item.date }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  }
+</div>

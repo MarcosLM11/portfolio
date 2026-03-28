@@ -30,7 +30,8 @@ export class ContactComponent {
     {
       title: 'Achievements',
       description: 'Milestones, certifications, and accomplishments',
-      href: '#',
+      href: '/achievements',
+      route: '/achievements',
       color: '#f97316',
       icon: 'trophy',
     },
