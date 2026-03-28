@@ -79,7 +79,7 @@
 /* Eyebrow */
 .lp-eyebrow {
   font-family: 'Space Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 1.05rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #3b82f6;
@@ -90,7 +90,7 @@
 .lp-title {
   font-family: 'Syne', sans-serif;
   font-weight: 500;
-  font-size: clamp(2.8rem, 6.5vw, 4rem);
+  font-size: clamp(3.4rem, 7.5vw, 5.2rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: #1c1830;
@@ -105,7 +105,7 @@
 
 /* Subtitle */
 .lp-subtitle {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: rgba(28, 24, 48, 0.52);
   margin: 0 0 2.25rem;
   text-align: center;

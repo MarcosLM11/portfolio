@@ -22,7 +22,8 @@ export class ContactComponent {
     {
       title: 'Guestbook',
       description: 'Leave your mark and see what others have to say',
-      href: '#',
+      href: '/guestbook',
+      route: '/guestbook',
       color: '#7c3aed',
       icon: 'book',
     },
