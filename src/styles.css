@@ -13,9 +13,20 @@ html {
 }
 
 body {
+  --mouse-x: 200%;
+  --mouse-y: 200%;
   background-color: #dbd6ef;
-  background-image: radial-gradient(circle, rgba(107, 92, 200, 0.22) 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
+  background-image:
+    radial-gradient(
+      circle 32vw at var(--mouse-x) var(--mouse-y),
+      transparent 0%,
+      rgba(219, 214, 239, 0.94) 100%
+    ),
+    radial-gradient(circle, rgba(107, 92, 200, 0.45) 1.5px, transparent 1.5px);
+  background-size:
+    100% 100%,
+    30px 30px;
+  background-attachment: fixed, scroll;
   overflow-x: hidden;
   min-height: 100vh;
   color: #1c1830;
