@@ -94,19 +94,21 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
     this.buildPositions();
 
     this.ngZone.runOutsideAngular(() => {
-      this.globeRef.nativeElement.addEventListener('pointerdown', this.onDown);
       this.frame();
     });
   }
 
   ngOnDestroy(): void {
     if (this.animId !== undefined) cancelAnimationFrame(this.animId);
-    this.globeRef?.nativeElement?.removeEventListener('pointerdown', this.onDown);
     if (isPlatformBrowser(this.platformId)) {
       document.removeEventListener('pointermove', this.onMove);
       document.removeEventListener('pointerup', this.onUp);
       document.removeEventListener('pointercancel', this.onUp);
     }
+  }
+
+  onGlobePointerDown(e: PointerEvent): void {
+    this.ngZone.runOutsideAngular(() => this.onDown(e));
   }
 
   private readonly onDown = (e: PointerEvent): void => {

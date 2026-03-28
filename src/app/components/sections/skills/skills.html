@@ -3,7 +3,7 @@
     <p class="skills-eyebrow">Tech Stack</p>
     <h2 class="skills-title">My <span class="skills-accent">Skills</span></h2>
 
-    <div class="globe-wrap" #globe>
+    <div class="globe-wrap" #globe (pointerdown)="onGlobePointerDown($event)">
       <canvas #canvas class="globe-canvas"></canvas>
 
       @for (skill of skills; track skill.name) {
